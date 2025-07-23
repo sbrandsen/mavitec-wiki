@@ -2,58 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vault Item Hover Reveal</title>
   <style>
-    body {
-      background: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .vault-container {
+    .vault-widget {
       position: relative;
-      width: 888px;
-      height: 1092px;
+      width: 400px;
+      margin: 20px auto;
+      font-family: sans-serif;
     }
-    .vault-container svg {
+
+    svg {
       width: 100%;
-      height: auto;
       display: block;
     }
+
     .label {
       position: absolute;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-family: sans-serif;
-      font-size: 18px;
+      background: white;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 12px;
+      white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s ease;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: solid transparent;
       pointer-events: none;
     }
-    .vault-container:hover .label:nth-child(2) { opacity: 1; transition-delay: 0.1s; }
-    .vault-container:hover .label:nth-child(3) { opacity: 1; transition-delay: 0.3s; }
-    .vault-container:hover .label:nth-child(4) { opacity: 1; transition-delay: 0.5s; }
-    .vault-container:hover .label:nth-child(5) { opacity: 1; transition-delay: 0.7s; }
 
-    .desc    { top: 20px; left: 50%; transform: translateX(-50%); }
-    .rev     { top: 370px; left: 90px; }
-    .unit    { bottom: 150px; left: 90px; }
-    .status  { bottom: 150px; right: 90px; }
+    .vault-widget:hover .label,
+    .vault-widget:hover .arrow {
+      opacity: 1;
+    }
+
+    .desc    { top: 5px; left: 50%; transform: translateX(-50%); transition-delay: 0.1s; }
+    .rev     { top: 90px; left: 50px; transition-delay: 0.2s; }
+    .unit    { bottom: 50px; left: 40px; transition-delay: 0.3s; }
+    .status  { bottom: 50px; right: 40px; transition-delay: 0.4s; }
+
+    .arrow.desc    { top: 45px; left: 50%; width: 2px; height: 40px; background: red; transform: translateX(-1px); transition-delay: 0.1s; }
+    .arrow.rev     { top: 110px; left: 100px; width: 40px; height: 2px; background: red; transition-delay: 0.2s; }
+    .arrow.unit    { bottom: 90px; left: 90px; width: 2px; height: 40px; background: red; transition-delay: 0.3s; }
+    .arrow.status  { bottom: 90px; right: 90px; width: 2px; height: 40px; background: red; transition-delay: 0.4s; }
   </style>
 </head>
 <body>
-  <div class="vault-container">
-    <!-- Labels that fade in -->
-    <div class="label desc">description: Bearing, Adapter sleeve, Ø80mm bore...</div>
+  <div class="vault-widget">
+    <!-- Labels -->
+    <div class="label desc">description: Bearing, Adapter sleeve, Ø80mm...</div>
     <div class="label rev">revision: A</div>
     <div class="label unit">unit: each</div>
     <div class="label status">status: Released</div>
 
-    <!-- SVG Base -->
-    <!-- Embedded directly for self-contained preview -->
-    <object type="image/svg+xml" data="Picture10.svg" width="888" height="1092"></object>
+    <!-- Arrows (styled lines) -->
+    <div class="arrow desc"></div>
+    <div class="arrow rev"></div>
+    <div class="arrow unit"></div>
+    <div class="arrow status"></div>
+
+    <!-- SVG base inline -->
+    <svg viewBox="1760 1180 880 1100">
+      <g>
+        <rect x="1763" y="1190" width="874" height="1023" rx="80" ry="80" fill="#9D1313" stroke="#000" stroke-width="13"/>
+        <rect x="1800" y="1240" width="800" height="950" rx="70" ry="70" fill="#fff" stroke="#000" stroke-width="8"/>
+        <g fill="none" stroke="#444" stroke-width="20">
+          <rect x="1880" y="1320" width="150" height="150" rx="20"/>
+          <rect x="2100" y="1320" width="150" height="150" rx="20"/>
+          <rect x="1880" y="1540" width="150" height="150" rx="20" fill="#aaa"/>
+          <rect x="2100" y="1540" width="150" height="150" rx="20"/>
+        </g>
+        <text x="2150" y="2000" font-size="70" font-family="sans-serif" fill="white" text-anchor="middle">VAULT ITEM</text>
+      </g>
+    </svg>
   </div>
 </body>
 </html>
