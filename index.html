@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hover Actions</title>
+  <meta charset="UTF-8">
+  <title>Vault Item Hover Reveal</title>
   <style>
-    .container {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      background: #3498db;
-      margin: 50px;
-      border-radius: 10px;
-    }
-
-    .actions {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0, 0, 0, 0.6);
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .container:hover .actions {
-      opacity: 1;
-    }
-
-    .actions button {
-      padding: 8px 12px;
-      background: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .actions button:hover {
+    body {
       background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
+    .vault-container {
+      position: relative;
+      width: 888px;
+      height: 1092px;
+    }
+    .vault-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .label {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .vault-container:hover .label:nth-child(2) { opacity: 1; transition-delay: 0.1s; }
+    .vault-container:hover .label:nth-child(3) { opacity: 1; transition-delay: 0.3s; }
+    .vault-container:hover .label:nth-child(4) { opacity: 1; transition-delay: 0.5s; }
+    .vault-container:hover .label:nth-child(5) { opacity: 1; transition-delay: 0.7s; }
+
+    .desc    { top: 20px; left: 50%; transform: translateX(-50%); }
+    .rev     { top: 370px; left: 90px; }
+    .unit    { bottom: 150px; left: 90px; }
+    .status  { bottom: 150px; right: 90px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="actions">
-      <button onclick="alert('Edit')">Edit</button>
-      <button onclick="alert('Delete')">Delete</button>
-      <button onclick="alert('Share')">Share</button>
-    </div>
+  <div class="vault-container">
+    <!-- Labels that fade in -->
+    <div class="label desc">description: Bearing, Adapter sleeve, Ø80mm bore...</div>
+    <div class="label rev">revision: A</div>
+    <div class="label unit">unit: each</div>
+    <div class="label status">status: Released</div>
+
+    <!-- SVG Base -->
+    <!-- Embedded directly for self-contained preview -->
+    <object type="image/svg+xml" data="Picture10.svg" width="888" height="1092"></object>
   </div>
 </body>
 </html>
