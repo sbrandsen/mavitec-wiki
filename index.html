@@ -2,10 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mavitec Item Details Hover Reveal</title>
   <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .svg-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .svg-container svg {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
     #descriptionarrow1,
     #descriptionarrow2,
     #descriptionvalue,
@@ -21,122 +45,6 @@
     #path16,
     #revisionvalue {
       opacity: 0;
-    }
-
-    .svg-container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .svg-container svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .svg-container:hover #descriptionarrow1 {
-      animation: fadeIn 0.3s 0s ease-out forwards;
-    }
-
-    .svg-container:hover #descriptionarrow2 {
-      animation: fadeIn 0.3s 0.25s ease-out forwards;
-    }
-
-    .svg-container:hover #descriptionlabel {
-      animation: fadeIn 0.3s 0.5s ease-out forwards;
-    }
-
-    .svg-container:hover #descriptionvalue {
-      animation: fadeIn 0.3s 0.75s ease-out forwards;
-    }
-
-    .svg-container:hover #statusarrow {
-      animation: fadeIn 0.3s 1s ease-out forwards;
-    }
-
-    .svg-container:hover #statusvalue {
-      animation: fadeIn 0.3s 1.25s ease-out forwards;
-    }
-
-    .svg-container:hover #releasedvalue {
-      animation: fadeIn 0.3s 1.5s ease-out forwards;
-    }
-
-    .svg-container:hover #unitarrow {
-      animation: fadeIn 0.3s 1.75s ease-out forwards;
-    }
-
-    .svg-container:hover #unitlabel {
-      animation: fadeIn 0.3s 2s ease-out forwards;
-    }
-
-    .svg-container:hover #unitvalue {
-      animation: fadeIn 0.3s 2.25s ease-out forwards;
-    }
-
-    .svg-container:hover #revisionarrow {
-      animation: fadeIn 0.3s 2.5s ease-out forwards;
-    }
-
-    .svg-container:hover #revisionlabel {
-      animation: fadeIn 0.3s 2.75s ease-out forwards;
-    }
-
-    .svg-container:hover #revisionvalue {
-      animation: fadeIn 0.3s 3s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="svg-container">
-    <!-- Embedded SVG -->
-    <svg viewBox="0 0 2692 1497" overflow="hidden" version="1.1" xml:space="preserve"
-      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mavitec Item Details Hover Reveal</title>
-  <style>
-    #descriptionarrow1,
-    #descriptionarrow2,
-    #descriptionvalue,
-    #descriptionlabel,
-    #statusvalue,
-    #unitlabel,
-    #revisionlabel,
-    #statusarrow,
-    #releasedvalue,
-    #unitarrow,
-    #unitvalue,
-    #revisionarrow,
-    #path16,
-    #revisionvalue {
-      opacity: 0;
-    }
-
-    .svg-container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .svg-container svg {
-      width: 100%;
-      height: auto;
-      display: block;
     }
 
     .svg-container:hover #descriptionarrow1 {
